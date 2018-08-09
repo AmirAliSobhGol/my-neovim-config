@@ -1,19 +1,34 @@
 """"""""""""""""""""""""""""""
-" => bufExplorer plugin
-""""""""""""""""""""""""""""""
-let g:bufExplorerDefaultHelp=0
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
-map <leader>o :BufExplorer<cr>
-
-
-""""""""""""""""""""""""""""""
 " => MRU plugin
 """"""""""""""""""""""""""""""
 let MRU_Max_Entries = 400
 map <leader>f :FZFMru<CR>
 
+""""""""""""""""""""""""""""""
+" => deoplete
+""""""""""""""""""""""""""""""
+let g:deoplete#enable_at_startup = 1
+
+""""""""""""""""""""""""""""""
+" => vim rooter
+""""""""""""""""""""""""""""""
+let g:rooter_patterns = ['.git/', 'package.json', 'README.md']
+
+""""""""""""""""""""""""""""""
+" => vim fugitive
+""""""""""""""""""""""""""""""
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+""""""""""""""""""""""""""""""
+" => vim switch
+""""""""""""""""""""""""""""""
+map <leader>s :Switch<cr>
+let g:switch_custom_definitions =
+    \ [
+    \   ['true', 'false'],
+    \   ['yml', 'yaml'],
+    \   ['&&', '||']
+    \ ]
 
 """"""""""""""""""""""""""""""
 " => CTRL-P
@@ -76,35 +91,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => lightline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-      \   'right': [ [ 'lineinfo' ], ['percent'] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': ' ', 'right': ' ' },
-      \ 'subseparator': { 'left': ' ', 'right': ' ' }
-      \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom

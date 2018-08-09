@@ -1,7 +1,15 @@
 call plug#begin('~/.vim/plugged')
 
 " Intelljsense like
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm i -g tern' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/denite.nvim'
+" Editor config support
+Plug  'editorconfig/editorconfig-vim'
+" Switch text e.g true to false
+Plug 'AndrewRadev/switch.vim'
 " Distration free viewing
 Plug 'junegunn/goyo.vim'
 "Async linting/fixing for vim
@@ -27,8 +35,9 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'scrooloose/nerdtree'
 "CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
-"Snippets (ultisnips)
+"Snippets
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 "Git fugitive
 Plug 'tpope/vim-fugitive'
 "Multi Cursor
@@ -52,14 +61,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ekalinin/Dockerfile.vim'
 "Jenkins syntax
 Plug 'martinda/jenkinsfile-vim-syntax'
-" Support copying to system clipboard
-Plug 'christoomey/vim-system-copy'
 " Nginx
 Plug 'chr4/nginx.vim'
 " Detect tab width
 Plug 'tpope/vim-sleuth'
 " Theme related
 Plug 'altercation/vim-colors-solarized'
+" vim System Copy
+Plug 'christoomey/vim-system-copy', {'do': 'apt-get install xsel'}
 
 call plug#end()
 
