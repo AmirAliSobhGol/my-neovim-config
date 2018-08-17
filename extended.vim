@@ -22,7 +22,6 @@ set guioptions-=L
 syntax enable
 set background=dark
 colorscheme solarized
-" let g:airline_theme='solarized'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on 

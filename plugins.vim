@@ -6,6 +6,8 @@ Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm i -g tern' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim'
+" Language support (syntax, highlighting...)
+Plug 'sheerun/vim-polyglot'
 " Editor config support
 Plug  'editorconfig/editorconfig-vim'
 " Switch text e.g true to false
